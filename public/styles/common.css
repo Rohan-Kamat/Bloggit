@@ -1,0 +1,47 @@
+* {
+    font-family: 'Gudea', 'sans-serif';
+}
+
+body {
+    margin: 0px;
+}
+
+.navbar {
+    width: calc(100% - 80px);
+    height: 40px;
+    background-color: #ff1058;
+    padding: 20px 40px;
+}
+
+.navbar h1 {
+    margin: 0;
+    color: white;
+    font-size: 32px;
+}
+
+.btn-1 {
+    background-color: #ff1058;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Gudea', 'sans-serif';
+}
+
+.btn-1:hover {
+    background-color: #ec0a4e;
+    cursor: pointer;
+}
+
+.btn-2 {
+    background-color: white;
+    border: 1px solid #ff1058;
+    color: #ff1058;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Gudea', 'sans-serif';
+}
+
+.btn-2:hover {
+    cursor: pointer;
+}

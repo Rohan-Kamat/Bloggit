@@ -1,0 +1,67 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+    <% if (fileCreated) { %>
+        <div class="status-container">
+            <div class="message">
+                <i class="fa-solid fa-check"></i> 
+                Blog created
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    <% } %>
+    <div class="heading-box">
+        <h1>All Blogs</h1>
+        <a href="/create">
+            <button class="btn-1">
+                Create Blog
+            </button>
+        </a>
+    </div>
+    <div class="blogs-container">
+        <% if (locals.blogs) {
+            if (blogs.length === 0) { %>
+                <div class="empty-container">
+                    No blogs found
+                </div>
+            <% } else {
+                for (var i = 0; i < blogs.length; i++) {
+                    var blog = blogs[i];
+                    var date = blog.date.getDate().toString() + "/" + blog.date.getMonth().toString() + "/" + blog.date.getFullYear().toString();
+        %>
+                <a href="/article/<%= i %>">
+                    <div class="blog-tile">
+                        <div class="tile-title">
+                            <h1>
+                                <%= blog.title %>
+                            </h1>
+                        </div>
+                        <div class="tile-date">
+                            <%= date %>
+                        </div>
+                        <div class="tile-author">
+                            <%= blog.author %>
+                        </div>
+                        <div class="tile-rating">
+                            <div class="stars s<%= Math.round(blog.rating) %>">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+        <%      }
+            }
+        }
+        %>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/49b78285c5.js" crossorigin="anonymous"></script>
+<script src="/js/blogs.js"></script>
+
+<%- include("partials/footer.ejs") %>
